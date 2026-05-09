@@ -1757,21 +1757,125 @@ And of course, if we take the max over the current action
 
 
 
-&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;Later on in this course, we are going to look at an algorithm that allows us to find the optimal value
+function V Star.
+For now, let's assume that there is some method of finding V the star Q star.
+We just don't know what these methods might be yet.
+One interesting question to ask is how do we use a V star or Q star?
+Define the optimal policy py star.
+Remember that this is the real goal of reinforcement learning.
+We don't care about V Star Q Star so much.
+We really just want to create an intelligent agent that behaves optimally.
+And of course, that behavior is described by Pi Star.
+So finding the star Q Star is just a means to an end.
+
+![](../Assets/photos/MDP_123.png)
+
+
+&nbsp;&nbsp;&nbsp;So let's say we have V Starr.
+How do we find Pi Starr We can again apply the Belman optimality equation.
+V Starr is defined recursively by taking the max over all possible actions.
+A Well, it makes sense that whatever action A leads to the max will be the best action to take when
+you are in status.
+Therefore, the optimal policy is to simply take this action a whatever that is, and hence to find
+the optimal policy.
+We just take the ARG max instead of the max.
+
+![](../Assets/photos/MDP_124.png)
+
+
+&nbsp;&nbsp;&nbsp;Now let's consider what we will do if we have Q Star.
+Remember that Q Star is already conditioned on the action.
+A A is an argument into the Q table.
+In fact, we can use what we already thought of in the previous slide since the right hand side is already.
+Q Star of SE and A Thus the action we want to choose if we are in status is just the arg max over all
+actions A of q star s and a.
+
+![](../Assets/photos/MDP_125.png)
+
+
+&nbsp;&nbsp;&nbsp;At this point, I want to answer a question which might not seem obvious to ask, which is better using
+the star or using Q star.
+Since we're using lots of math and lots of symbols, it's easy to forget that these correspond to real
+world programming problems.
+So let's compare how we find the optimal policy for Star compared with Q Star.
+If we use the expression that involves vs Star.
+Notice how it also involves the environment dynamics.
+That is to say, if we want to use V Star, we must know or estimate P of s prime and are given sgrna.
+Now this is skipping ahead a little bit, so please bear with me.
+Suppose that we're playing a video game and the state space is enormous.
+They might be pixels on a screen or the number of possible positions in a chess match.
+What I mean by state space is all the possible values of SAS prime.
+So what I'm getting at is p of S prime in R given us an A might be really hard to estimate because there
+are just so many different values of SAS Prime.
+And so in this course we will eventually learn methods where we can avoid having to do this at all.
+In particular, we're going to study three methods dynamic programming, Monte Carlo methods and temporal
+difference learning.
+So dynamic programming is the only method that makes use of this probability distribution, while the
+other methods do not.
+Because of this, we can only use the V star to find the optimal policy with dynamic programming, while
+for the other methods we will need to use.
+Q star.
+
+![](../Assets/photos/MDP_126.png)
+
+
+&nbsp;&nbsp;&nbsp;The reason I want to mention this now is that this theme is going to be repeated throughout the rest
+of this course.
+The pattern that this course is going to follow is like this for each algorithm we discuss, we're going
+to be answering the questions, How do we find V for a given policy and how do we find the best policy?
+As you've seen, finding the best policy is much easier when we have.
+Q Compared to when we have V, we call the act of finding the value function for a given policy, the
+evaluation problem or the prediction problem we call the act of finding the optimal policy the control
+problem.
+In most cases, this will involve finding.
+Q Thus, it's the case that most of the time the evaluation problem will be associated with finding
+V, whereas the control problem will be associated with finding Q or more precisely, Q star.
+
+![](../Assets/photos/MDP_127.png)
 
 
 
 
 
 
+# MDP Summary
+
+&nbsp;&nbsp;&nbsp;In this lecture we are going to summarize everything we learn in this section.
+This section was all about Mark of decision processes or MDP.
+We started this section by discussing the grid a world environment which we will be using throughout
+this course since it is an excellent tool for helping us understand reinforcement learning.
+Next we use this section to define and many of the terms that we will be using throughout reinforcement
+learning.
+There were quite a few terms to learn more so than a typical course on supervised or unsupervised learning.
+We looked at states actions rewards terminal states episodes state spaces action spaces policies values
+and more.
+We reviewed the Markoff property and extended the basic Markov model to mark our decision processes.
+We saw how using the framework of PS we could derive a few more concepts.
+We recognized that our goal is to maximize the sum of future rewards and that this is a random variable.
+We named this the return since the return is random.
+Our goal is actually to maximize the expected return which we call the value.
+We looked at two different kinds of values the state value and the action value.
+From this we were able to derive the Belmont equation which is a recursive equation describing the value
+function.
+This also led us to the notion of malady for both values and policies.
+Our goal in reinforcement learning is to find an optimal policy which has an associated value which
+is the optimal value
+
+![](../Assets/photos/MDP_128.png)
 
 
+&nbsp;&nbsp;&nbsp;I want to remind you that the study of MDPs is by nature a theoretical.
+This is why there was no coding to be done in this section.
+In every subsequent section of this course we will be focusing on specific algorithms that will help
+us find solutions to the prediction problem and the control problem.
+This was the section where we stopped handholding so in the next few sections it will be your job to
+do the homework and it will be your job to design RL programs using only the theoretical descriptions.
+This is how you will test your understanding of the material.
+There will be no more fill in the blanks exercises beyond this point.
+Since you are meant to have maturity your skills to a higher level by now
 
-
-
-
-
-
+![](../Assets/photos/MDP_129.png)
 
 
 
